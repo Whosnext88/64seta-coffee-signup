@@ -44,13 +44,13 @@
 
     <div class="flex gap-2 mb-8">
       <button onclick="switchDay('friday')" id="tab-friday" class="px-6 py-3 font-semibold text-lg flex items-center gap-x-2 nav-active">
-        <i class="fa-solid fa-calendar-day"></i><span>Friday</span>
+        <i class="fa-solid fa-calendar-day"></i><span>Friday, Feb 6</span>
       </button>
       <button onclick="switchDay('saturday')" id="tab-saturday" class="px-6 py-3 font-semibold text-lg flex items-center gap-x-2 text-slate-700 hover:bg-slate-100 rounded-full transition-colors">
-        <i class="fa-solid fa-calendar-day"></i><span>Saturday</span>
+        <i class="fa-solid fa-calendar-day"></i><span>Saturday, Feb 7</span>
       </button>
       <button onclick="switchDay('sunday')" id="tab-sunday" class="px-6 py-3 font-semibold text-lg flex items-center gap-x-2 text-slate-700 hover:bg-slate-100 rounded-full transition-colors">
-        <i class="fa-solid fa-calendar-day"></i><span>Sunday</span>
+        <i class="fa-solid fa-calendar-day"></i><span>Sunday, Feb 8</span>
       </button>
     </div>
 
@@ -149,7 +149,8 @@
     function openModal(day, time) {
       currentDay = day; currentTime = time;
       document.getElementById('modal-time').innerText = time;
-      document.getElementById('modal-day').innerText = day.charAt(0).toUpperCase() + day.slice(1);
+      const dayNames = { friday: 'Friday, Feb 6', saturday: 'Saturday, Feb 7', sunday: 'Sunday, Feb 8' };
+      document.getElementById('modal-day').innerText = dayNames[day];
       document.getElementById('name-input').value = '';
       document.getElementById('email-input').value = '';
       document.getElementById('modal').classList.remove('hidden');
@@ -176,4 +177,6 @@
     window.onload = init;
   </script>
 </body>
+</html>
+
 </html>
